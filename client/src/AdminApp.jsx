@@ -96,26 +96,9 @@ export default function AdminApp() {
   }
 
   async function validateAdminSession() {
-    const token = getAdminToken();
-    if (!token) {
-      redirectToAdminLogin();
-      return;
-    }
-
-    try {
-      const res = await fetch(apiUrl("/admin/session"), {
-        headers: getAuthorizedHeaders(),
-      });
-
-      if (!res.ok) {
-        redirectToAdminLogin();
-        return;
-      }
-
-      refreshDashboardData();
-    } catch (error) {
-      redirectToAdminLogin();
-    }
+    // Admin authentication disabled for portfolio purposes
+    // Skip token validation and directly load dashboard data
+    refreshDashboardData();
   }
 
   useEffect(() => {

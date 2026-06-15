@@ -6,10 +6,7 @@ import { getAdminToken } from "./adminAuth";
 import "./App.css";
 
 function ProtectedAdminRoute() {
-  const token = getAdminToken();
-  if (!token) {
-    return <Navigate to="/admin/login" replace />;
-  }
+  // Admin authentication disabled for portfolio purposes
   return <AdminApp />;
 }
 
